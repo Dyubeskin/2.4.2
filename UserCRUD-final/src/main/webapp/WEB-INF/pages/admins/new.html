@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form th:method="POST" th:action="@{/users}" th:object="${user}">
+<form th:method="POST" th:action="@{/admins/users}" th:object="${user}">
     <label for="name">Name: </label>
     <input type="text" th:field="*{name}" id="name"/>
     <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
@@ -22,12 +22,26 @@
     <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</div>
     <br/>
 
-    <label for="email">Email: </label>
-    <input type="text" th:field="*{email}" id="email"/>
-    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>
+    <label for="password">Password: </label>
+    <input type="text" th:field="*{password}" id="password"/>
+    <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Age Error</div>
     <br/>
 
+    <label>User role</label><input type="checkbox" name="userr">
+    <label>Admin role</label><input type="checkbox" name="admin">
+
+<!--    <select >-->
+<!--        <option value="">Select Test Order</option>-->
+<!--        <option value="admin">admin</option>-->
+<!--        <option value="userr">user</option>-->
+<!--    </select>-->
+
+
     <input type="submit" value="Create!"/>
+</form>
+<br>
+<form th:method="GET" action="/logout">
+    <input type="submit" value="logout">
 </form>
 
 </body>
