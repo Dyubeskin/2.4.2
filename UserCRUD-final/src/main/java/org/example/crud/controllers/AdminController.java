@@ -106,7 +106,6 @@ private final RoleServiceImpl roleService;
         }
         if (admin) {
             roles.add(new Role(1L, "ROLE_ADMIN"));
-            roles.add(new Role(2L, "ROLE_USER"));
         }
         user.setRoles(roles);
 
@@ -134,7 +133,6 @@ private final RoleServiceImpl roleService;
         }
         if (admin) {
             roles.add(new Role(1L, "ROLE_ADMIN"));
-            roles.add(new Role(2L, "ROLE_USER"));
         }
         user.setRoles(roles);
         userService.update(id, user);
